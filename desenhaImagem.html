@@ -1,0 +1,23 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+var imagem = new Image();
+imagem.src = "http://www.caelum.com.br/imagens/instrutores/fotos/paulo-silveira-90.jpg";
+
+var desenhaImagem = function(x,y) {
+	c.drawImage(imagem, x,y);
+}
+
+var limpaTela = function() {
+	c.clearRect(0,0,600,400);
+}
+
+
+
+desenhaImagem(100,100);
+
+</script>

@@ -1,0 +1,47 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+
+var circulo = function(x,y,raio) {
+	c.strokeStyle = "blue";
+	c.beginPath();
+	c.arc(x,y,raio,0,2*Math.PI);
+	c.stroke();
+}
+
+var desenhaQuadradoVermelho = function(y,x) {
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+
+    c.fillStyle="red";
+    c.fillRect(x, y, 50, 50);
+
+    c.strokeStyle="black";
+    c.strokeRect(x, y, 50, 50);
+};
+
+
+var limpaTela = function() {
+	c.clearRect(0,0,600,400);
+}
+
+var x = 1;
+
+var desenha = function() {
+	circulo(x,100,x/2);
+	x = x + 1;
+}
+var y = 1;
+
+var desenha2 = function () {
+	desenhaQuadradoVermelho(y,100);
+	y = y + 1;
+}
+
+setInterval(desenha, 30);
+setInterval(desenha2, 30);
+</script>
